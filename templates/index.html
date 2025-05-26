@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Travel Suggestion Bot</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #f5f5f5; }
+        form { background: white; padding: 20px; border-radius: 8px; max-width: 400px; margin: auto; }
+        input, select, button { margin-top: 10px; width: 100%; padding: 10px; }
+        .result { margin-top: 20px; text-align: center; font-size: 1.2em; }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center;">🌍 Smart Travel Suggestion Bot</h2>
+    <form method="POST">
+        <label>💸 Budget:</label>
+        <select name="budget">
+            <option>low</option>
+            <option>medium</option>
+            <option>high</option>
+        </select>
+
+        <label>☀️ Season:</label>
+        <select name="season">
+            <option>summer</option>
+            <option>winter</option>
+            <option>monsoon</option>
+        </select>
+
+        <label>🎯 Interest:</label>
+        <select name="interest">
+            <option>adventure</option>
+            <option>relaxation</option>
+            <option>culture</option>
+        </select>
+
+        <button type="submit">Get Suggestion</button>
+    </form>
+
+    {% if suggestion %}
+    <div class="result">
+        🎉 Based on your preferences: <br>
+        ✅ <strong>{{ suggestion }}</strong>
+    </div>
+    {% endif %}
+</body>
+</html>
